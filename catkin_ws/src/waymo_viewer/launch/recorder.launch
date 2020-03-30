@@ -1,0 +1,10 @@
+<launch>
+    <arg name="tf_path" />
+    <arg name="bag_path" />
+    <node pkg="waymo_viewer" type="recorder.py" name="waymo_viewer" output="screen">
+        <param name="lib_path" value = "/waymo-od"/>
+        <param name="folderpath" value = "/tf_files"/>
+        <param name="bag_path" value = "/bag_files"/>
+    </node>
+    
+</launch>
