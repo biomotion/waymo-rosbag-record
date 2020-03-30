@@ -24,9 +24,7 @@ BASH_OPTION=bash
 echo "running $BASH_OPTION in docker"
 
 docker run -it --rm \
-        --network host \
         --privileged \
-        --name waymo-viewer \
         -e DISPLAY \
         -e QT_X11_NO_MITSHM=1 \
         -e XAUTHORITY=$XAUTH \
