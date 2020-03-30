@@ -234,7 +234,7 @@ def talker():
                             label_marker.header = header
                             label_marker.type = Marker.CUBE
                             label_marker.action = Marker.ADD
-                            ID = int(original_label.id[len(original_label.id)-6:len(original_label.id)].encode("utf-8").hex(),32)
+                            ID = int(original_label.id[len(original_label.id)-6:len(original_label.id)].encode("hex"),32)
                             label_marker.id = np.int32(ID)
                             label_marker.pose.position.x = original_label.box.center_x
                             label_marker.pose.position.y = original_label.box.center_y
@@ -372,7 +372,7 @@ def talker():
                             label_marker.header = header
                             label_marker.type = Marker.CUBE
                             label_marker.action = Marker.ADD
-                            ID = int(laser_label.id[len(laser_label.id)-8:len(laser_label.id)].encode("utf-8").hex(),16)
+                            ID = int(laser_label.id[len(laser_label.id)-8:len(laser_label.id)].encode("hex"),16)
                             label_marker.id = np.int32(ID)
                             label_marker.lifetime = rospy.Duration(0.1)
                             label_marker.pose.position.x = laser_label.box.center_x
