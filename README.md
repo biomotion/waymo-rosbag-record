@@ -21,7 +21,7 @@ docker pull biomotion/waymo-viewer:1.0
 
 Or, you can build one for yourself.
 ```bash
-cd ~/waymo-rosbag-record
+cd ~/waymo-rosbag-record/Docker
 source build.sh
 ```
 You can grab a coffee before docker build done building new image
