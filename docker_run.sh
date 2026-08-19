@@ -9,7 +9,7 @@ function usage()
 
 
 BASH_OPTION="roslaunch waymo_viewer recorder.launch"
-if [ -z "$1" ]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
     usage
     exit
 else
@@ -18,6 +18,12 @@ else
     echo "TF_PATH = $TF_PATH"
     echo "BAG_PATH = $BAG_PATH"
 fi
+
+# Use a valid default for XAUTH so that the Xauthority bind mount is
+# always specified with an absolute source and destination. When XAUTH
+# is empty the line expands to `:` and docker fails with
+# "mount destination : not absolute".
+XAUTH=${XAUTH:-$HOME/.Xauthority}
 
 BASH_OPTION=bash
 
